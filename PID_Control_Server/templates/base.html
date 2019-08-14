@@ -1,0 +1,49 @@
+{%extends 'bootstrap/base.html' %}
+
+{% block head %}
+{{super()}}
+<link
+    href="http://cdn.pydata.org/bokeh/release/bokeh-0.13.0.min.css"
+    rel="stylesheet" type="text/css">
+<link
+    href="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.13.0.min.css"
+    rel="stylesheet" type="text/css">
+
+<script src="http://cdn.pydata.org/bokeh/release/bokeh-0.13.0.min.js"></script>
+<script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.13.0.min.js"></script>
+<script src="http://cdn.pydata.org/bokeh/release/bokeh-api-0.13.0.min.js"></script>
+
+{%endblock %}
+
+{% block title %}
+      {% if title %}
+      PID controller-{{ title }}
+      {% else %}
+      <title>PID controller</title>
+      {% endif %}
+{% endblock %}
+
+{% block navbar %}
+        <nav class="navbar navbar-default"> 
+	<div>PID controller:
+	 <a href="/index">Home</a>
+	<a href="/setup">Setup</a>
+	</div>
+        <hr> 
+	</nav>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-info" role="alert">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        {# application content needs to be provided in the app_content block #}
+        {% block app_content %}{% endblock %}
+    </div>
+{% endblock %}

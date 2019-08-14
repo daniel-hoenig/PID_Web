@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+	
+	<div class="row">
+        	<div class="col-sm-4">
+			<h2>PID setup</h2>
+            		{{ wtf.quick_form(form1) }}
+
+            		{{ wtf.quick_form(form2) }}
+
+            		{{ wtf.quick_form(form4) }}
+
+			<h2>Setpoint</h2>
+
+            		{{ wtf.quick_form(form3) }}
+        	</div>
+	
+		<div class="col-sm-8">
+        	<h2>Temperaturverlauf</h2>
+        	{% for part in plot %}
+            	{{part | safe}}
+        	{% endfor %}
+		</div>
+    	</div>
+{% endblock %}

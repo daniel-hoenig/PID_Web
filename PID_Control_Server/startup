@@ -1,0 +1,5 @@
+#!/bin/bash
+#script to commence autostart
+
+cd /home/pi/Documents/Skripte/PID_Control_Server
+sudo -H -u pi python3 PIDserver.py &

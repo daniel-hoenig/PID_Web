@@ -1,0 +1,30 @@
+#PID Server Readme
+
+##Introduction
+
+Simple implementation of a PID controller for the Raspberry PI. The Parameters of the PID controller can be set via a Webpage
+
+
+## Requirements
+
+*Python 3
+*Python USBTMC (install usbtmc as explained in the readme found in 
+in the python_usbtmc_master folder)
+
+
+## Installation
+
+Find the Vendor and Product ID of the USB-Device used and convert the Values to decimal.
+Change the values in Line 29 of PID_server.py to the Values of your device.
+
+To run the PID controller open the Terminal and move to this directory and type
+
+>> python3 PID_Server.py
+
+
+
+
+The Page to set the parameters can be found at:
+
+127.0.0.1:5000/setup
+or via LAN at:
